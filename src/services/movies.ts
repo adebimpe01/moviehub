@@ -1,5 +1,5 @@
 import { api } from './api';
-import type { Movie, MovieDetails, MovieListResponse, Credits, MovieFilters, Genre } from '../types/movie';
+import type { MovieDetails, MovieListResponse, Credits, MovieFilters, Genre } from '../types/movie';
 
 export async function getPopularMovies(page = 1): Promise<MovieListResponse> {
   const { data } = await api.get<MovieListResponse>('/movie/popular', {
