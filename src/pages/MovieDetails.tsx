@@ -66,7 +66,7 @@ export default function MovieDetails() {
       {/* Back button */}
       <button
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-gray-500 hover:text-gray-900 text-sm mb-6 transition-colors"
+        className="flex items-center gap-2 text-gray-900 hover:text-gray-900 text-sm mb-6 transition-colors"
       >
         <ArrowLeft size={16} />
         Back
@@ -103,7 +103,7 @@ export default function MovieDetails() {
               <span className="text-gray-900 font-medium">{movie.vote_average.toFixed(1)}</span>
               <span className="text-gray-500 text-sm">({movie.vote_count.toLocaleString()} votes)</span>
             </div>
-            <button className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-gray-900 text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+            <button className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
               <Heart size={16} />
               Add to Favorites
             </button>
@@ -114,7 +114,7 @@ export default function MovieDetails() {
           )}
 
           <h2 className="text-gray-900 font-medium mb-2">Overview</h2>
-          <p className="text-gray-700 text-sm leading-relaxed mb-5">{movie.overview}</p>
+          <p className="text-gray-800 text-sm leading-relaxed mb-5">{movie.overview}</p>
 
           <div className="flex gap-2 flex-wrap mb-5">
             {movie.genres.map((genre) => (

@@ -46,8 +46,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 }`
               }
             >
-              <Icon size={18} />
-              {label}
+              {({ isActive }: { isActive: boolean }) => (
+                <>
+                  <Icon size={18} className={isActive ? 'text-white' : 'text-accent'} />
+                  {label}
+                </>
+              )}
             </NavLink>
           ))}
         </nav>

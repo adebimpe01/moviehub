@@ -28,7 +28,7 @@ function SelectField({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-full">
+    <div className="w-full sm:flex-1 sm:min-w-[130px]">
       <label className="text-gray-500 text-xs font-medium mb-1.5 block">{label}</label>
       <div className="relative">
         <select
@@ -51,22 +51,7 @@ export default function FilterPanel({ genres, filters, onChange, onClear }: Filt
   const hasActiveFilters = filters.genre || filters.year || filters.minRating;
 
   return (
-    <div
-  className="
-    absolute
-    right-0
-    top-14
-    z-50
-    w-[320px]
-    rounded-xl
-    border
-    border-gray-200
-    bg-white
-    p-4
-    shadow-xl
-  "
->
-  <div className="space-y-4">
+    <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-end gap-4 sm:gap-3">
       <SelectField
         label="Genre"
         value={filters.genre}
@@ -116,15 +101,15 @@ export default function FilterPanel({ genres, filters, onChange, onClear }: Filt
           </option>
         ))}
       </SelectField>
-      <div className="flex justify-between pt-2">
 
       {hasActiveFilters && (
-        <button onClick={onClear} className="text-accent text-sm font-medium hover:underline pb-2 shrink-0 ml-1">
+        <button
+          onClick={onClear}
+          className="text-accent text-sm font-medium hover:underline pb-2 shrink-0 sm:ml-1 text-left"
+        >
           Clear Filters
         </button>
       )}
-    </div>
-    </div>
     </div>
   );
 }
